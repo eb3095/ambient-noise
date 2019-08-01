@@ -1,4 +1,4 @@
-const sliders = document.querySelectorAll('input[name="volume"');
+const sliders = document.getElementsByClass('audio-slider');
 const sounds = document.getElementById('sounds');
 
 
