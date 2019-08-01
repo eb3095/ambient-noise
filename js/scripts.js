@@ -1,13 +1,13 @@
 const sliders = document.querySelectorAll('input[name="volume"');
-const sounds = document.querySelector('.sounds');
+const sounds = document.getElementById('sounds');
 
 
 const handleAudioChange = (ev) => {
   if (ev.isTrusted) {
     const volume = parseFloat(ev.target.value);
     const soundName = ev.target.dataset.sound;
-    const audio = sounds.querySelector(`audio[name=${soundName}]`);
-    const image = document.querySelector(`img[data-icon-name=${soundName}]`);
+    const audio = sounds.getElementById(`${soundName}`);
+    const image = document.getElementById(`${soundName}-ctl`).getElementsByTagName('img')[0];
 
     if (audio) {
       if (volume === 0) {
