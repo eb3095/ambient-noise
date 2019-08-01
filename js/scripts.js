@@ -1,4 +1,4 @@
-const sliders = document.getElementsByClass('audio-slider');
+const sliders = document.getElementsByClassName('audio-slider');
 const sounds = document.getElementById('sounds');
 
 
@@ -6,7 +6,7 @@ const handleAudioChange = (ev) => {
   if (ev.isTrusted) {
     const volume = parseFloat(ev.target.value);
     const soundName = ev.target.dataset.sound;
-    const audio = sounds.getElementById(`${soundName}`);
+    const audio = document.getElementById(`${soundName}`);
     const image = document.getElementById(`${soundName}-ctl`).getElementsByTagName('img')[0];
 
     if (audio) {
@@ -26,4 +26,6 @@ const handleAudioChange = (ev) => {
 }
 
 
-sliders.forEach(slider => slider.addEventListener('change', handleAudioChange));
+for (var ctr = 0; ctr < sliders.length; ctr++) {
+  sliders[ctr].addEventListener('change', handleAudioChange);
+}
